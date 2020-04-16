@@ -24,16 +24,13 @@ HtmlChatListener.prototype.exitName = function(ctx) {
 };
 
 HtmlChatListener.prototype.enterColor = function(ctx) {
-    var color = ctx.WORD().getText();
+    const color = ctx.WORD().getText();
     this.Res.write('<span style="color: ' + color + '">');
 };
 
 HtmlChatListener.prototype.exitColor = function(ctx) {
-    this.Res.write("</span>");
-};
-
-HtmlChatListener.prototype.exitMessage = function(ctx) {
-    this.Res.write(ctx.getText());
+    ctx.text += ctx.message().text;
+    ctx.text += '</span>';
 };
 
 HtmlChatListener.prototype.exitEmoticon = function(ctx) {
@@ -41,12 +38,35 @@ HtmlChatListener.prototype.exitEmoticon = function(ctx) {
 
     if(emoticon === ':-)' || emoticon === ':)')
     {
-        this.Res.write("🙂");
+        ctx.text = "🙂";
     }
 
     if(emoticon === ':-(' || emoticon === ':(')
     {
-        this.Res.write("🙁");
+        ctx.text = "🙁";
+    }
+};
+
+HtmlChatListener.prototype.exitMessage = function(ctx) {
+    let text = '';
+
+    for (let index = 0; index < ctx.children.length; index++ ) {
+        if (ctx.children[index].text != null)
+            text += ctx.children[index].text;
+        else
+            text += ctx.children[index].getText();
+    }
+
+    // If node is not child of line, it's child of color
+    if(!(ctx.parentCtx instanceof ChatParser.ChatParser.LineContext))
+    {
+        ctx.text = text;
+        // let color print the text
+    }
+    else
+    {
+        this.Res.write(text);
+        this.Res.write("</p>");
     }
 };
 

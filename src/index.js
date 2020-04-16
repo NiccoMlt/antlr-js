@@ -24,7 +24,7 @@ http.createServer((req, res) => {
      * you give it to the lexer and it transforms them in tokens,
      * that are then interpreted by the parser.
      */
-    const input = "john SHOUTS: hello @michael /pink/this will work/ :-) n";
+    const input = "john SHOUTS: hello @michael /pink/this will work/ :-)\n";
     const chars = new antlr4.InputStream(input);
     const lexer = new ChatLexer.ChatLexer(chars);
     const tokens = new antlr4.CommonTokenStream(lexer);
