@@ -9,14 +9,12 @@
     "node": "^13.2.0"
   },
   "scripts": {
-    "antlr": "antlr4 -Dlanguage=JavaScript -o src src/Chat.g4",
+    "antlr": "antlr4 -Dlanguage=JavaScript -o gen/ src/Chat.g4",
     "postinstall": "yarn antlr",
     "start": "node src/index.js"
   },
   "dependencies": {
     "antlr4": "~4.7.2"
   },
-  "devDependencies": {
-    "@types/antlr4": "^4.7.0"
-  }
+  "devDependencies": {}
 }

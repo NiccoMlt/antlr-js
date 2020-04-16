@@ -1,7 +1,7 @@
 const antlr4 = require('antlr4/index');
-const ChatLexer = require('./ChatLexer');
-const ChatParser = require('./ChatParser');
-const ChatListener = require('./ChatListener').ChatListener;
+const ChatLexer = require('../gen/ChatLexer');
+const ChatParser = require('../gen/ChatParser');
+const ChatListener = require('../gen/ChatListener').ChatListener;
 
 HtmlChatListener = function(res) {
     this.Res = res;

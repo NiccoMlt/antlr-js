@@ -1,7 +1,7 @@
 const http = require('http');
 const antlr4 = require('antlr4/index');
-const ChatLexer = require('./ChatLexer');
-const ChatParser = require('./ChatParser');
+const ChatLexer = require('../gen/ChatLexer');
+const ChatParser = require('../gen/ChatParser');
 let HtmlChatListener = require('./HtmlChatListener').HtmlChatListener;
 
 http.createServer((req, res) => {

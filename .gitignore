@@ -274,6 +274,7 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 ### ANTLR 4 template
+gen
 *.interp
 *.tokens
 Chat*.js
