@@ -22,7 +22,7 @@ link                : TEXT TEXT ;
 
 color               : '/' WORD '/' message '/';
 
-mention             : '@' WORD ;
+mention             : {this._input.LT(-1).text == ' '}? '@' WORD ;
 
 /*
  * Lexer Rules
@@ -49,4 +49,4 @@ WHITESPACE          : (' ' | '\t') ;
 
 NEWLINE             : ('\r'? '\n' | '\r')+ ;
 
-TEXT                : ('['|'(') .*? (']'|')');
+TEXT                : {this._input.LA(-1) == '[' || this._input.LA(-1) == '('}? ~[\])]+ ;
