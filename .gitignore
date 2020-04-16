@@ -273,3 +273,7 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
+### ANTLR 4 template
+*.interp
+*.tokens
+Chat*.js

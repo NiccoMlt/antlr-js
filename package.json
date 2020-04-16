@@ -3,5 +3,18 @@
   "version": "1.0.0",
   "private": true,
   "main": "src/index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": "^13.2.0"
+  },
+  "scripts": {
+    "antlr": "antlr4 -Dlanguage=JavaScript -o src src/Chat.g4"
+  },
+  "dependencies": {
+    "antlr4": "~4.7.2"
+  },
+  "devDependencies": {
+    "@types/antlr4": "^4.7.0"
+  }
 }
