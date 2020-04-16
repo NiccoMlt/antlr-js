@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NiccoMlt/antlr-js.git"
+  },
   "license": "MIT",
   "type": "commonjs",
   "engines": {
