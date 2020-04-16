@@ -23,6 +23,19 @@ HtmlChatListener.prototype.exitName = function(ctx) {
     this.Res.write("</strong> ");
 };
 
+HtmlChatListener.prototype.enterColor = function(ctx) {
+    var color = ctx.WORD().getText();
+    this.Res.write('<span style="color: ' + color + '">');
+};
+
+HtmlChatListener.prototype.exitColor = function(ctx) {
+    this.Res.write("</span>");
+};
+
+HtmlChatListener.prototype.exitMessage = function(ctx) {
+    this.Res.write(ctx.getText());
+};
+
 HtmlChatListener.prototype.exitEmoticon = function(ctx) {
     const emoticon = ctx.getText();
 
