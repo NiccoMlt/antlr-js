@@ -1,0 +1,9 @@
+printWidth: 120
+# tabWidth: 2           # default
+# useTabs: false        # default
+# semi: true            # default
+# singleQuote: false    # default
+quoteProps: "consistent"
+# trailingComma: "es5"  # default
+# bracketSpacing: true  # default
+arrowParens: "avoid"
