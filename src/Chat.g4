@@ -6,11 +6,11 @@ grammar Chat;
 
 chat                : line+ EOF ;
 
-line                : name command message NEWLINE;
+line                : name command message NEWLINE ;
 
 message             : (emoticon | link | color | mention | WORD | WHITESPACE)+ ;
 
-name                : WORD WHITESPACE;
+name                : WORD WHITESPACE ;
 
 command             : (SAYS | SHOUTS) ':' WHITESPACE ;
 
@@ -18,9 +18,9 @@ emoticon            : ':' '-'? ')'
                     | ':' '-'? '('
                     ;
 
-link                : TEXT TEXT ;
+link                : '[' TEXT ']' '(' TEXT ')' ;
 
-color               : '/' WORD '/' message '/';
+color               : '/' WORD '/' message '/' ;
 
 mention             : {this._input.LT(-1).text == ' '}? '@' WORD ;
 
