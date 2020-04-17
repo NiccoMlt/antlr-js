@@ -41,7 +41,7 @@ fragment UPPERCASE  : [A-Z] ;
 
 SAYS                : S A Y S ;
 
-SHOUTS              : S H O U T S;
+SHOUTS              : S H O U T S ;
 
 WORD                : (LOWERCASE | UPPERCASE | '_')+ ;
 
