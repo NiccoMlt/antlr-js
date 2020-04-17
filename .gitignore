@@ -274,7 +274,14 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 ### ANTLR 4 template
+# code generation output folder
 gen
-*.interp
-*.tokens
-Chat*.js
+
+# ANTLR4 and program generated files
+Chat.interp
+Chat.tokens
+ChatLexer.tokens
+ChatLexer.interp
+ChatLexer.js
+ChatListener.js
+ChatParser.js

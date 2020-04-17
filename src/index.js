@@ -3,6 +3,7 @@ const antlr4 = require("antlr4/index");
 const ChatLexer = require("../gen/ChatLexer");
 const ChatParser = require("../gen/ChatParser");
 let HtmlChatListener = require("./HtmlChatListener").HtmlChatListener;
+let ChatErrorListener = require("./ChatErrorListener").ChatErrorListener;
 
 http
   .createServer((req, res) => {
@@ -29,6 +30,11 @@ http
     const lexer = new ChatLexer.ChatLexer(chars);
     const tokens = new antlr4.CommonTokenStream(lexer);
     const parser = new ChatParser.ChatParser(tokens);
+
+    // parser.removeErrorListeners()
+    // const errorListener = new ChatErrorListener(res)
+    // parser.addErrorListener(errorListener)
+
     parser.buildParseTrees = true; // redundant, since the option already defaults to true
     const tree = parser.chat(); // set the root node of the tree as a chat rule
     const htmlChat = new HtmlChatListener(res);
