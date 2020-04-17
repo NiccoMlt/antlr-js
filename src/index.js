@@ -1,13 +1,13 @@
-const http = require('http');
-const antlr4 = require('antlr4/index');
-const ChatLexer = require('../gen/ChatLexer');
-const ChatParser = require('../gen/ChatParser');
-let HtmlChatListener = require('./HtmlChatListener').HtmlChatListener;
+const http = require("http");
+const antlr4 = require("antlr4/index");
+const ChatLexer = require("../gen/ChatLexer");
+const ChatParser = require("../gen/ChatParser");
+let HtmlChatListener = require("./HtmlChatListener").HtmlChatListener;
 
-http.createServer((req, res) => {
-
+http
+  .createServer((req, res) => {
     res.writeHead(200, {
-        'Content-Type': 'text/html',
+      "Content-Type": "text/html",
     });
 
     res.write(`
@@ -39,5 +39,5 @@ http.createServer((req, res) => {
         </html>
     `);
     res.end();
-
-}).listen(1337);
+  })
+  .listen(1337);
