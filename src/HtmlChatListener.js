@@ -45,6 +45,10 @@ HtmlChatListener.prototype.exitEmoticon = function (ctx) {
   }
 };
 
+HtmlChatListener.prototype.enterLink = function (ctx) {
+  ctx.text = `<a href=\"${ctx.TEXT()[1]}\">${ctx.TEXT()[0]}</a>`;
+};
+
 HtmlChatListener.prototype.exitMessage = function (ctx) {
   let text = "";
 
