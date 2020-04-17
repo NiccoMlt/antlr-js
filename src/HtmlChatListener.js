@@ -25,7 +25,7 @@ HtmlChatListener.prototype.exitName = function (ctx) {
 
 HtmlChatListener.prototype.enterColor = function (ctx) {
     const color = ctx.WORD().getText();
-    this.Res.write('<span style="color: ' + color + '">');
+    ctx.text = `<span style="color: ${color}">`;
 };
 
 HtmlChatListener.prototype.exitColor = function (ctx) {
