@@ -19,7 +19,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "antlr4": "~4.7.2"
+    "antlr4": "~4.8.0"
   },
   "devDependencies": {
     "husky": "^4.2.5",
